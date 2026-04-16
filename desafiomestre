@@ -4,7 +4,7 @@ void recursivoR (int recursividadeRainha) { // "void" Usado para criar uma açã
 
     if (recursividadeRainha > 0) {
         printf("Esquerda\n");
-        recursivoR(recursividadeRainha -1);
+        recursivoR(recursividadeRainha - 1);
     }
 }
 
@@ -12,7 +12,7 @@ void recursivoT (int recursividadeTorre) {
 
     if (recursividadeTorre > 0) {
         printf("Direita\n");
-        recursivoT(recursividadeTorre -1);
+        recursivoT(recursividadeTorre - 1);
     }
 }
 
