@@ -1,0 +1,88 @@
+#include <stdio.h>
+
+void recursivoR (int recursividadeRainha) { // "void" Usado para criar uma ação e não precisar devolver nenhum valor numérico.
+
+    if (recursividadeRainha > 0) {
+        printf("Esquerda\n");
+        recursivoR(recursividadeRainha -1);
+    }
+}
+
+void recursivoT (int recursividadeTorre) {
+
+    if (recursividadeTorre > 0) {
+        printf("Direita\n");
+        recursivoT(recursividadeTorre -1);
+    }
+}
+
+void recursivoB (int recursividadeBispo) {
+
+    if (recursividadeBispo <= 0) return;
+
+    for (int recursividadeBispo1 = 0; recursividadeBispo1 < 1; recursividadeBispo1++) {
+        printf("Cima\n");
+        for (int recursividadeBispo2 = 0; recursividadeBispo2 < 1; recursividadeBispo2++) {
+            printf("Direita\n");
+        }
+    }
+    recursivoB(recursividadeBispo - 1);
+}
+
+void recursivoC () {
+
+    for (int recursividadeCavalo = 0; recursividadeCavalo < 2; recursividadeCavalo++) {
+        printf("Cima\n");
+        for (int recursividadeCavalo2 = 0; recursividadeCavalo2 < 1; recursividadeCavalo2++) {
+            if (recursividadeCavalo == 1) {
+                printf("Direita\n");
+            } else {
+                continue;
+            }
+        }
+    }
+}
+
+int main () {
+    int pecas;
+
+    do { // Criei todo o código dentro do "do" para caso o usuário escolha uma opção inválida, o código se repita. Apenas testando as funcionalidades do "do-while e switch" juntos.
+        printf("Digite 1. para ver o movimento da rainha.\n");
+        printf("Digite 2. para ver o movimento da torre.\n");
+        printf("Digite 3. para ver o movimento do bispo.\n");
+        printf("Digite 4. para ver o movimento do cavalo.\n");
+        scanf("%d", &pecas);
+
+        switch (pecas) {
+            case 1:
+            recursivoR(8);
+            printf("\n");
+            break;
+
+            case 2:
+            recursivoT(5);
+            printf("\n");
+            break;
+
+            case 3:
+            recursivoB(5);
+            printf("\n");
+            break;
+
+            case 4:
+            recursivoC();
+            printf("\n");
+            break;
+
+            case 5:
+            printf("Saindo...\n");
+            break;
+
+            default:
+            printf("Opção Inválida, tente novamente.\n");
+            break;
+        }
+    } while (pecas != 5); // Caso pecas for diferente de "5", o código vai se repetir.
+
+    return 0;
+}
