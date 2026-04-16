@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+int main () {
+    int pecas;
+
+    do { // Criei todo o código dentro do "do" para caso o usuário escolha uma opção inválida, o código se repita. Apenas testando as funcionalidades do "do-while e switch" juntos.
+        printf("Digite 1. para ver o movimento da rainha.\n");
+        printf("Digite 2. para ver o movimento da torre.\n");
+        printf("Digite 3. para ver o movimento do bispo.\n");
+        printf("Digite 4. para ver o movimento do cavalo.\n");
+        scanf("%d", &pecas);
+
+        switch (pecas) {
+            case 1:
+            int rainha = 1; // Criei as variáveis dentro do case para as variáveis existirem apenas dentro do case. E sempre que o código se repetir com o "do" as variáveis aparecerem novamente caso o usuário escolha o mesmo número mais de uma vez.
+            while (rainha <= 8) {
+                printf("# Esquerda #\n");
+                rainha++;
+            }
+            break;
+
+            case 2:
+            int torre = 1;
+            do {
+                printf("# Direita #\n");
+                torre++;
+            } while (torre <= 5);
+            break;
+
+            case 3:
+            int bispo = 1;
+            for (bispo; bispo <= 5; bispo++) {
+                printf("# Cima Direita #\n");
+            }
+            break;
+
+            case 4:
+            for (int cavalo = 0; cavalo < 2; cavalo++) {
+                printf("# Baixo #\n");
+            int movimento = 0;
+                while (movimento < 1 && cavalo == 1) {
+                    printf("# Esquerda #\n");
+                    movimento++;
+                }
+            }
+            break;
+
+            case 5:
+            printf("Saindo...\n");
+            break;
+
+            default:
+            printf("Opção Inválida, tente novamente.\n");
+            break;
+        }
+    } while (pecas != 5); // Caso pecas for diferente de "5", o código vai se repetir.
+
+    return 0;
+}
