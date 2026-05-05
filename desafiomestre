@@ -51,6 +51,7 @@ int main () {
         printf("Digite 2. para ver o movimento da torre.\n");
         printf("Digite 3. para ver o movimento do bispo.\n");
         printf("Digite 4. para ver o movimento do cavalo.\n");
+        printf("Digite 5. para parar o loop.\n");
         scanf("%d", &pecas);
 
         switch (pecas) {
